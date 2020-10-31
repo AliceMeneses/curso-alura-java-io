@@ -19,8 +19,8 @@ public class TesteLeituraScanner {
 			scannerLinha.useLocale(Locale.US);
 			
 			String conta = scannerLinha.next();
-			int numero = scannerLinha.nextInt();
 			int agencia = scannerLinha.nextInt();
+			int numero = scannerLinha.nextInt();
 			String titular = scannerLinha.next();
 			double saldo = scannerLinha.nextDouble();
 			
@@ -30,7 +30,10 @@ public class TesteLeituraScanner {
 			System.out.println("Titular: " + titular);
 			System.out.println("Saldo: R$" + saldo);
 			System.out.println("----------------------");
+			
+			scannerLinha.close();
 		}
+		scanner.close();
 	}
 
 }
