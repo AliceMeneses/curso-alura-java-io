@@ -12,24 +12,20 @@ public class TesteLeituraScanner {
 		
 		while(scanner.hasNext()) {
 			String linha = scanner.nextLine();		
-			System.out.println(linha);
 			
 			Scanner scannerLinha = new Scanner(linha);
 			scannerLinha.useDelimiter(",");
 			scannerLinha.useLocale(Locale.US);
 			
-			String conta = scannerLinha.next();
+			String tipoConta = scannerLinha.next();
 			int agencia = scannerLinha.nextInt();
 			int numero = scannerLinha.nextInt();
 			String titular = scannerLinha.next();
 			double saldo = scannerLinha.nextDouble();
 			
-			System.out.println("Tipo de conta: " + conta);
-			System.out.println("Número da conta: " + numero);
-			System.out.println("Agencia: " + agencia);
-			System.out.println("Titular: " + titular);
-			System.out.println("Saldo: R$" + saldo);
-			System.out.println("----------------------");
+			
+			System.out.format(new Locale("pt","BR"), "%s: %04d-%04d, %s - R$%.2f %n", tipoConta, agencia, numero, titular, saldo);
+			System.out.println("----------------------------------------");
 			
 			scannerLinha.close();
 		}
